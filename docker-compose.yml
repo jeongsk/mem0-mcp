@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  mcp_server:
+    build: .
+    restart: always
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    volumes:
+      - .:/app 
