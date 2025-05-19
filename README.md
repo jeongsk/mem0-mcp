@@ -24,7 +24,7 @@ source .venv/bin/activate
 uv pip install -e .
 ```
 
-5. Update `.env` file in the root directory with your mem0 API key:
+5. Get your mem0 API key from [here](https://app.mem0.ai/dashboard/api-keys) and update the `.env` file in the root directory with your key:
 
 ```bash
 MEM0_API_KEY=your_api_key_here
@@ -84,4 +84,16 @@ uv run main.py --host <your host> --port <your port>
 ```
 
 The server exposes an SSE endpoint at `/sse` that MCP clients can connect to for accessing the coding preferences management tools.
+
+## Running with Docker Compose
+
+To run the `mcp_server` using Docker Compose, execute the following command in your terminal:
+
+```bash
+docker compose up -d --build
+```
+
+This command will:
+- Build the Docker image for the `mcp_server` if it hasn't been built yet, or if there are changes to the `Dockerfile` or related files.
+- Start the `mcp_server` container in detached mode (`-d`), meaning it will run in the background.
 
